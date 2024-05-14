@@ -14,19 +14,18 @@
         <div >
             <form id="formula" action="">
                 <label for="inicio">Início da Contagem: </label>
-                <input type="number" name="inicio" id="inicio">
+                <input required type="number" name="inicio" id="inicio">
 
                 <label for="fim">Fim da Contagem: </label>
-                <input type="number" name="fim" id="fim">
+                <input required type="number" name="fim" id="fim">
 
                 <label for="passo">Pular: </label>
-                <input type="number" name="passo" id="passo">
+                <input required type="number" name="passo" id="passo">
                 
                 <button type="button" onclick="contar()">Contar</button>
 
             </form>
         </div>
-        
         <div id="resultado"></div>
     </section>
     <footer>
