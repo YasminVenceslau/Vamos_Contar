@@ -58,3 +58,28 @@ img{
     margin: auto;
     
 }
+
+p{
+    font-weight: 900;
+    
+}
+
+#resultado{
+    text-align: left;
+    
+
+}
+.tem:after{
+    content: "🏴";
+}
+
+
+.ntem{
+    font-weight: 900;
+    color: brown;
+}
+
+.ntem::after{
+    content: '😭';
+   
+}
