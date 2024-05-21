@@ -9,7 +9,7 @@ function contar(){
     var pulada = Number(document.getElementById('passo').value)
     var res = document.getElementById('resultado')
     
-    var falta = "Escolha outros valores!"
+    var falta = "Escolha seus valores!"
 
     var resultado = []
     
@@ -17,28 +17,36 @@ function contar(){
     var spanNTem ="<span class='ntem'> Parâmetros Inválidos</span>"
     
     
-     if (nInicial >= nFinal){ //se o nfinal for menor que o nInicial
+     if (nInicial.length == 0 || nFinal.length == 0 || pulada.length == 0){ //se o nfinal for menor que o nInicial
         
-
+        window.alert('[ERRO] Faltam dados!')
         res.innerHTML =  spanNTem + "<br>" + falta
         
     } else {
-        
-        for (let i = nInicial ; i <= nFinal;i += pulada){
-        
-            resultado.push(i)
-            
 
+        
+        res.innerHTML = 'Contando.'
+        res.innerHTML = 'Contando..'
+        res.innerHTML = 'Contando...'
+
+
+
+        if (nInicial < nFinal){
+            //crescendo
+            for(var i = nInicial; i <= nFinal; i += pulada){
+                res.innerHTML += `${i} + \u{1F449}`
+            }  
+
+        }else{
+            //regredindo
+            for ( var i = nInicial ; i >= nFinal; i -= pulada){
+                res.innerHTML += `${i} + \u{1F449}`
+            }
         }
-        let certo = resultado.map( t=> t.toString().match(/.{1,6}/g).join('👉'))
-    
-        res.innerHTML = certo.join('👉') + spanTem
+        res.innerHTML += `\u{1F3C1}`
+        
     }
 
-    
-    
-    
-   
 
 }
 
